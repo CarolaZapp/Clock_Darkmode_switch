@@ -1,0 +1,352 @@
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('./fonts/roboto-v30-latin-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('./fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('./fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+:root{
+  --primary-color:#fff;
+  --secondary-color:#262431;
+  --tertiary-color:#e8e8e8;
+  --quaternary-color:#1e1c28;
+  --quintary-color: #34323e;
+  --primary-gradient: linear-gradient(225deg, #ff900b, #ff505b);
+  --secondary-gradient: linear-gradient(225deg, #93cdff, #3c3a74);
+  --primary-box-shaddow:0 1rem 5rem rgba(248, 106, 59, 0.2);
+  --secondary-box-shaddow: 0 1rem 5rem rgba(60, 58, 115, 0.5);
+  --tertiary-box-shaddow:  0 2rem 6rem rgba(6, 12, 15, 0.2);
+  --quaternary-box-shaddow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  --primary-font-color: #777;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.1s;
+  overflow: hidden;
+}
+
+.switch.container {
+  background-color: var(--secondary-color);
+}
+
+.circle-bg {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  position: absolute;
+  top: -20%;
+  right: 50%;
+  transform: translateX(50%);
+  box-shadow: var(--primary-box-shaddow);
+}
+
+.switch .circle-bg{
+  background: var(--secondary-gradient);
+  box-shadow: var(--secondary-box-shaddow);
+}
+
+.clock-wrapper {
+  width: 15rem;
+  height: 25rem;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  box-shadow: var(--tertiary-box-shaddow);
+  position: relative;
+  transition: background-color 0.1s;
+  margin-top: 7rem;
+  z-index: 100;
+}
+
+.switch .clock-wrapper {
+  background-color: var(--secondary-color);
+}
+
+.clock-wrapper-sun-moon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.sun-moon {
+  width: 4rem;
+  height: 4rem;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  position: relative;
+}
+
+.switch .sun-moon {
+  background: var(--secondary-gradient);
+  box-shadow: none;
+}
+
+.sun-moon::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transform: scale(0);
+  transform-origin: right top;
+  transition: transform 0.5s;
+}
+
+.switch .sun-moon::after {
+  background-color: var(--secondary-color);
+  transform: scale(1);
+}
+
+.clock-wrapper-sun-moon button {
+  width: 12rem;
+  height: 2rem;
+  background-color: var(--tertiary-color);
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  color: var(--primary-font-color);
+  cursor: pointer;
+  position: relative;
+  margin-top:1rem;
+  transition: background-color 0.1s;
+}
+
+.switch .clock-wrapper-sun-moon button {
+  background-color: var(--quaternary-color);
+  color: var(--primary-color);
+}
+
+.clock-wrapper-sun-moon button span {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.bg {
+  background-color: var(--primary-color);
+  border-radius: 3rem;
+  left: 0;
+  box-shadow: var(--quaternary-box-shaddow);
+  transition: background-color 0.1s, transform 0.4s;
+}
+
+.switch .bg {
+  background-color: var(--quintary-color); 
+  transform: translateX(100%);
+}
+
+.light,
+.dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.light {
+  left: 0;
+}
+
+.dark {
+  right: 0;
+}
+/* **************** clock - date ***************** */
+
+.clock-wrapper-clock{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock{
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+}
+
+.numbers {
+  width: inherit;
+  height: inherit;
+  position: relative;
+}
+
+.numbers div {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-shadow: 0.2rem 0.2rem 0.2rem #222;
+}
+
+.twelve {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.three {
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.six {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nine {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.needles{
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.needles::before{
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--primary-font-color);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.switch .needles::before {
+  background-color: var(--primary-font-color);
+}
+
+.needles div{
+  width: 0.25rem;
+  height: 3.4rem;
+  background-color: var(--primary-font-color);
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom center;
+}
+
+.switch .needles div{
+  background-color: var(--primary-font-color);
+}
+
+.needles .hour{
+  height: 2.4rem;
+}
+
+.needles .second{
+  background: var(--primary-gradient);
+}
+
+.switch .needles .second{
+  background: var(--secondary-gradient);
+}
+
+.time{
+  color:var(--primary-font-color);
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+
+.date{
+  color: var(--primary-font-color);
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle{
+  background: var(--primary-gradient);
+  color: var(--primary-color);
+  border-radius:50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in;
+  font-size: 0.75rem;
+}
+
+.switch .date .circle{
+  background: var(--secondary-gradient);
+}
+
+/* ****************** circle - bottom *********** */
+
+.circle-bg-bottom {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: var(--primary-box-shaddow);
+}
+
+.switch .circle-bg-bottom{
+  background: var(--secondary-gradient);
+  box-shadow: var(--secondary-box-shaddow);
+}
+
+
+@media (min-width: 431px) {
+  .container{
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .circle-bg{
+    top: -15%;
+    right: 5%;
+    transform: translateX(45%);
+  }
+  .clock-wrapper{
+    margin-right: 2rem;
+  }
+
+  .circle-bg-bottom{
+    bottom: -15%;
+    left: 5%;
+    transform: translateX(-45%);
+  }
+
+}

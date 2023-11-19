@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uhr mit Darkmode Schalter ">
+  <meta name="author" content="Carola Zapp" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Uhr mit Darkmode Schalter</title>
+</head>
+<body>
+  <!-- This project was inspired by Udemy courses of Brad Traversy >>Theme Clock<< Udemy Course: 50 Projects in 50 Days - HTML, CSS & JavaScript and Code And Create >>Contact Form with Light / Dark Switch Mode << Udemy Course: Build 30 Web Projects with HTML, CSS, and JavaScript (2024)
+ -->
+ <div class="container">
+  <div class="circle-bg"></div>
+  <div class="clock-wrapper">
+    <div class="clock-wrapper-sun-moon">
+      <div class="sun-moon"></div>
+      <button type="button">
+        <span class="bg"></span>
+        <span class="light">Hell</span>
+        <span class="dark">Dunkel</span>
+      </button>
+    </div>
+    <div class="clock-wrapper-clock">
+      <div class="clock">
+        <div class="numbers">
+          <div class="twelve">12</div>
+          <div class="three">3</div>
+          <div class="six">6</div>
+          <div class="nine">9</div>
+        </div>
+        <div class="needles">
+          <div class="hour"></div>
+          <div class="minute"></div>
+          <div class="second"></div>
+        </div>
+      </div>
+    <div class="time"></div>
+    <div class="date"></div>
+    </div>
+  </div>
+  <div class="circle-bg-bottom"></div>
+ </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
